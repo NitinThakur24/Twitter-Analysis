@@ -1,4 +1,3 @@
-__author__ = 'kapish'
 from secrets import Oauth_Secrets
 import tweepy
 from textblob import TextBlob
@@ -18,7 +17,7 @@ def primary(input_hashtag):
     neutral_count = 0
     pos_count = 0
     for tweet in Tweets:
-        # print tweet.text
+        print(tweet.text)
         blob = TextBlob(tweet.text)
         if blob.sentiment.polarity < 0:         #Negative
             neg += blob.sentiment.polarity
