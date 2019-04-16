@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
 from .forms import userinput
-import sentiment
+from .sentiment import sentiment
 
 
 def index(request):

@@ -1,4 +1,4 @@
-from secrets import Oauth_Secrets
+from Sentimeter.secrets import Oauth_Secrets
 import tweepy
 from textblob import TextBlob
 
