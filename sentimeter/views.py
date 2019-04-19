@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
 from .forms import userinput
-from .sentiment import sentiment
+from .sentiment import primary
 
 
 def index(request):
@@ -14,7 +14,7 @@ def analyse(request):
     if request.GET and user_input.is_valid():
         input_hastag = user_input.cleaned_data['q']
         print(input_hastag)
-        data = sentiment.primary(input_hastag)
+        data = primary(input_hastag)
         return render(request, "result.html", {'data': data})
     return render(request, "index.html", {'input_hastag': user_input})
 

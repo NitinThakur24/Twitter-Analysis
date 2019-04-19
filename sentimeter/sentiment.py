@@ -1,4 +1,4 @@
-from Sentimeter.secrets import Oauth_Secrets
+from .secrets import Oauth_Secrets
 import tweepy
 from textblob import TextBlob
 
@@ -18,6 +18,8 @@ def primary(input_hashtag):
     pos_count = 0
     for tweet in Tweets:
         print(tweet.text)
+        # instance = tweet(**tweet)
+        # instance.save()
         blob = TextBlob(tweet.text)
         if blob.sentiment.polarity < 0:         #Negative
             neg += blob.sentiment.polarity
